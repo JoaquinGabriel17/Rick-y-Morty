@@ -1,9 +1,13 @@
 .App {
   text-align: center;
+  background-color:antiquewhite ;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSmCRVixZ8_ELMlJmX-AyncMsH-XTZoMspFQ&usqp=CAU");
+  height: 925px;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 32rem;
+  width: 85rem;
   pointer-events: none;
 }
 
@@ -11,17 +15,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -35,4 +28,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* .cards{
+  display: flexbox;
+} */
+
+.cardi{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
