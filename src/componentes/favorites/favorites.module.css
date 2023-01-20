@@ -1,0 +1,30 @@
+.fav{
+        background-color: turquoise;
+            width: 17rem;
+            height: 22.9rem;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-evenly;
+            border: groove;
+            border-block-width: 1rem;
+            border-color: chartreuse;
+            border-radius: 0.6rem;                
+}
+
+.boton{
+    background-color: chartreuse;
+    /* border-radius: 3rem; */
+    float: left;
+    font-family: fantasy;
+    color: black;
+    width: 5.7rem;
+    height: 2rem;
+    font-size: 1.3rem;
+}
+
+
+.contain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

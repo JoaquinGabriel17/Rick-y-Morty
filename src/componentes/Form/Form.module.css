@@ -1,0 +1,28 @@
+.formulario{
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+}
+
+.boton{
+    background-color: chartreuse;
+    /* border-radius: 3rem; */
+    float: left;
+    font-family: fantasy;
+    color: black;
+    width: 5.7rem;
+    height: 2rem;
+    font-size: 1.3rem;
+}
+
+.enviar{
+    background-color: chartreuse;
+    border-radius: 3rem;
+
+    font-family: fantasy;
+    color: darkblue;
+    width: 5.7rem;
+    height: 2rem;
+    font-size: 1.3rem;
+}
+

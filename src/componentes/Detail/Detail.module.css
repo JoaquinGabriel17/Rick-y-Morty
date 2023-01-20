@@ -1,0 +1,28 @@
+.boton{
+    background-color: chartreuse;
+    /* border-radius: 3rem; */
+    float: left;
+    font-family: fantasy;
+    color: black;
+    width: 5.7rem;
+    height: 2rem;
+    font-size: 1.3rem;
+}
+
+.contain{
+    background-color: chartreuse;
+    display: flex;
+    margin: 70px;
+    border: outset;
+    border-width: 0.6rem;
+    border-color: darkcyan;
+    border-radius: 3rem;
+    font-family: fantasy;
+    width: 600px;
+}
+
+.image{
+    float: right;
+    margin-left: 47px;
+    border-radius: 2rem;
+}

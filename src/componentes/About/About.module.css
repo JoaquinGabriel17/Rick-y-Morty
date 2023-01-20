@@ -1,0 +1,34 @@
+.contain{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSmCRVixZ8_ELMlJmX-AyncMsH-XTZoMspFQ&usqp=CAU");
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.boton{
+    background-color: chartreuse;
+    /* border-radius: 3rem; */
+    float: left;
+    font-family: fantasy;
+    color: black;
+    width: 5.7rem;
+    height: 2rem;
+    font-size: 1.3rem;
+}
+
+.nombre{
+    /* position: absolute; */
+    background-color:darkblue;
+    font-family: fantasy;
+    color: chartreuse;
+    font-size: 3rem;
+}
+
+.lista{
+    background-color: darkblue;
+    font-size: 1.5rem;
+    text-align: left;
+    color: chartreuse;
+    font-family: fantasy;
+}
