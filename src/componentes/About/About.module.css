@@ -1,9 +1,10 @@
 .contain{
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSmCRVixZ8_ELMlJmX-AyncMsH-XTZoMspFQ&usqp=CAU");
-
+ 
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    padding: 5rem;
 }
 
 .boton{
@@ -16,19 +17,31 @@
     height: 2rem;
     font-size: 1.3rem;
 }
+.link{
+    text-decoration: none;
+}
+
+.boton:hover{
+    background-color:darkcyan;
+    cursor: pointer;
+    
+
+}
 
 .nombre{
     /* position: absolute; */
-    background-color:darkblue;
-    font-family: fantasy;
+    background-color:black;
+    font-family: 'Courier New', Courier, monospace;
     color: chartreuse;
     font-size: 3rem;
 }
 
 .lista{
-    background-color: darkblue;
+    background-color: black;
     font-size: 1.5rem;
     text-align: left;
     color: chartreuse;
-    font-family: fantasy;
+    font-family: 'Courier New', Courier, monospace;
+    width: 50rem;
+    margin-left: 160px;
 }

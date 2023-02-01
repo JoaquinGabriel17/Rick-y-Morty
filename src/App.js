@@ -3,7 +3,7 @@ import './App.css';
 import Cards from './componentes/cards/cards.jsx';
 import { useState } from 'react';
 import Nav from './componentes/Nav/Nav.jsx';
-import { Routes,Route } from 'react-router-dom';
+import { Routes,Route, useLocation } from 'react-router-dom';
 import About from './componentes/About/About';
 import Detail from './componentes/Detail/Detail';
 import Form from './componentes/Form/Form';
@@ -12,9 +12,9 @@ import Favorites from './componentes/favorites/Favorites';
 function App() {
 
   const [characters, setCharacters] = useState([])
-
-  const onSearch = (character) =>{
-    fetch(`https://rickandmortyapi.com/api/character/${character}`)
+  const location = useLocation()
+  const onSearch = (id) =>{
+    fetch(`http://localhost:3001/rickandmorty/character/${id}`)
       .then((response) => response.json())
       .then((data) => {
          if (data.name) {
@@ -33,12 +33,13 @@ function App() {
 
   return (
     <div className="App">
-    <Nav onSearch={onSearch} ></Nav>
+    {location.pathname === '/' ? <Form/> : <Nav onSearch={onSearch}/>}
+    
+  
     
 
         <Routes>
           <Route path='/favorites' element={<Favorites/>} />
-          <Route path="/" element={<Form/>} />
           <Route path='/home' element={<Cards onClose={onClose} characters={characters} />} /> 
           <Route path='/about' element={<About/>} />
           <Route path='/detail/:detailID' element={<Detail/>} />

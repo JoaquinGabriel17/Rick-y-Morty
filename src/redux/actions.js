@@ -1,12 +1,27 @@
 import { ADD_FAV, DELETE_FAV,FILTER, ORDER } from "./actions-type";
-
+import axios from "axios"
 
 export const addFav = (fav) => {
-    return {type: ADD_FAV, payload: fav }
+    return async (dispatch) => {
+        
+        const response = await axios.post("http://localhost:3001/rickandmorty/fav", fav)
+        const data = response.data
+
+        return dispatch({
+            type: ADD_FAV, payload: data
+        })
+
+    }
+    
 }
 
 export const deleteFav = (id) => {
-    return { type: DELETE_FAV, payload: id }
+    return async (dispatch) => {
+        const response = await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`)
+        const data  = response.data
+
+        return dispatch({ type: DELETE_FAV, payload: data})
+    }
 }
 
 export const filterCards = (status) => {

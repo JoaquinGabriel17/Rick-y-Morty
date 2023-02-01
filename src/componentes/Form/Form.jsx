@@ -2,11 +2,13 @@
 import React from "react"
 import validation from "./validation.js"
 import style from "./Form.module.css"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 const {formulario} = style
 
 
 const Form = () => {
+
+const navigate = useNavigate()
 
 const [ userData, setUserData ] = React.useState({
             username:"",
@@ -42,13 +44,13 @@ const handleSubmit = (eve) => {
         setErrors({
             username: '',
             password: '',
-            validation: validation,
+
         })
         setUserData({
             username: '',
             password: '',
         })
-        
+        navigate("/home")
     }
     else alert('debe llenar todos los campos')
 }
@@ -57,10 +59,6 @@ const handleSubmit = (eve) => {
 
     return(
         <div className={formulario}> 
-        <button className={style.boton}>
-            <Link to="/home">Home</Link>
-
-        </button>
           <label>Username:</label>
           <input type="text" value={userData.username} 
           name="username" placeholder="username..." onChange={handleInputChange}

@@ -1,28 +1,46 @@
 .boton{
-    background-color: chartreuse;
+    background-color: darkcyan;
     /* border-radius: 3rem; */
     float: left;
     font-family: fantasy;
-    color: black;
+    color:black;
     width: 5.7rem;
     height: 2rem;
     font-size: 1.3rem;
 }
-
+.boton:hover{
+    background-color: red;
+    cursor: pointer;
+}
 .contain{
-    background-color: chartreuse;
+    background-color:black;
     display: flex;
     margin: 70px;
     border: outset;
     border-width: 0.6rem;
     border-color: darkcyan;
     border-radius: 3rem;
+    justify-content: space-between;
     font-family: fantasy;
-    width: 600px;
+    height: 400px;
+    width: 1070px;
+    padding: 1rem;
+    /* position: absolute; */
 }
 
 .image{
     float: right;
-    margin-left: 47px;
-    border-radius: 2rem;
+    /* margin-left: 47px; */
+    border-radius: 100%;
+}
+
+.global{
+    padding: 3rem;
+}
+
+.detail{
+    margin-left: 200px;
+    font-size: 1.3rem;
+    color:chartreuse;
+    font-family: 'Courier New', Courier, monospace;
 }

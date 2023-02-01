@@ -10,7 +10,7 @@ const Detail = () => {
 
      
 useEffect(() => {
-    fetch(`https://rickandmortyapi.com/api/character/${detailID}`)
+    fetch(`http://localhost:3001/rickandmorty/detail/${detailID}`)
     .then((response) => response.json())
     .then((char) => {
       if (char.name) {
@@ -25,24 +25,24 @@ useEffect(() => {
   return setCharacter({});
 }, [detailID])
     return(
-      <>
+      <div className={style.global}>
       <button className={style.boton}>
-               <Link to="/home" >HOME</Link>
+               <Link to="/home" style={{ "text-decoration": "none", "color": "black"}} >BACK</Link>
             </button>
         <div className={style.contain}>
             
             <div className={style.detail}>
           <h1>Detail</h1>
-          <h2>Nombre: {character?.name}</h2>
-          <h3>Status: {character?.status}</h3>
-          <h3>Especie: {character?.species}</h3>
-          <h3>Genero: {character?.gender}</h3>
-          <h3>Origin: {character?.origin?.name}</h3>
+          <h2>Nombre:  {character?.name}</h2>
+          <h3>Status:  {character?.status}</h3>
+          <h3>Especie:  {character?.species}</h3>
+          <h3>Genero:  {character?.gender}</h3>
+          <h3>Origin:  {character?.origin?.name}</h3>
           </div>
           {/* <h1>{character.location}</h1> */}
           <img src={character.image} alt={character.name} className={style.image} ></img>
         </div>
-        </>
+        </div>
     )
 }
 

@@ -28,3 +28,15 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.div{
+    padding: 3rem;
+}
+
+.selector{
+    background-color: chartreuse;
+    font-family: fantasy;
+    height: 1rem;
+    float: left;
+    position: relative;
+}

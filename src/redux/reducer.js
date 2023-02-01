@@ -10,9 +10,10 @@ const reducer = (state = initialState, action) => {
 
     case ADD_FAV:
         return {
+            
             ...state,
-            myFavorites: [...state.allCharacters,action.payload],
-            allCharacters: state.myFavorites
+            myFavorites: [...state.allCharacters, action.payload],
+            allCharacters: [...state.allCharacters, action.payload]
         }
 
     case DELETE_FAV:
@@ -25,24 +26,20 @@ const reducer = (state = initialState, action) => {
         }
 
     case FILTER:
-    
-        let filter = state.myFavorites.filter((char) => {
-            return char.gender !== action.payload
-        })
-        return {
+        // const { allCharacters } = state
+        const filter = state.allCharacters.filter(char => char.gender === action.payload)
+        return{
             ...state,
             myFavorites: filter
         }
 
     case ORDER:
-        let lista = state.myFavorites
-        if(action.payload === "Ascendente"){
-            lista.sort()
-        }
-        if(action.payload === "Descendente") lista.sort()
-        return {
+        return{
             ...state,
-            myFavorites: lista
+            myFavorites:
+            action.payload === "Ascendente"
+            ? state.allCharacters.sort((a, b) => a.id - b.id)
+            : state.allCharacters.sort((a, b) => b.id - a.id)
         }
 
     default:

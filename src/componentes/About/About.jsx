@@ -10,16 +10,17 @@ const About = () => {
         <div className={contain}>
             <div className={creador}>
                 <button className={boton}>
-                    <Link to="/home">Home</Link>
+                    <Link className={style.link} to="/home">Home</Link>
                 </button>
-               <h2 className={nombre}>Joaquin Ocampo</h2>
+               <h2 className={nombre}>Rick y Morty App</h2>
                {/* <img alt="troyan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeUNHid_BtGyix39jH_PvVaWb4D4olrvyk5A&usqp=CAU"/> */}
                
                {/* <h1>App Info</h1>  */}
                <ul className={lista}>App Info
-                <li>Aplicacion de Rick y Morty</li>
-                <li>Cartas de todos los personajes de la serie</li>
-                <li>Funciones(en etapa de desarrolo)</li>
+                <li>Mas de 800 cartas de personajes de Rick y Morty</li>
+                <li>Lo ultimo en funciones de ordenamiento y filtado</li>
+                <li>Aplicacion en desarrollo...</li>
+                <li>Una creación de Joaquin Ocampo</li>
                 </ul>  
             </div>
        

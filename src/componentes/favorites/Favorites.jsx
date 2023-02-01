@@ -1,13 +1,13 @@
-import { connect, useDispatch } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 import style from "./favorites.module.css"
 import { orderCards, filterCards } from "../../redux/actions"
 
 
-export const Favorites = ({myFavorites}) => {
+ const Favorites = () => {
 
 const dispatch = useDispatch()
-
+const { myFavorites } = useSelector(state => state);
     const handleSelector = (e) => {
         e.preventDefault()
         dispatch(orderCards(e.target.value))
@@ -18,47 +18,44 @@ const dispatch = useDispatch()
     }
 
     return (
-        <>
+        <div className={style.div}>
         <button className={style.boton}>
             <Link to="/home">Home</Link>
         </button>
-          <div>
-                    <select>
-                        <option onSelect={handleSelector} value="Ascendente" >Ascendente</option>
-                        <option onSelect={handleSelector} value="Descendente">Descendente</option>
+          <div >
+                    <select disabled={false} className={style.selector}
+                     onChange={handleSelector}>
+                        <option  selected={true} disabled="disabled">Ordenar</option>
+                        <option value="Ascendente" >Ascendente</option>
+                        <option value="Descendente">Descendente</option>
                     </select>
-                    <select>
-                        <option onSelect={handleFilter} value="Male">Male</option>
-                        <option onSelect={handleFilter} value="Female">Female</option>
-                        <option onSelect={handleFilter} value="Genderless">Genderless</option>
-                        <option onSelect={handleFilter} value="unknown">unknown</option>
+                    <select className={style.selector}  onChange={handleFilter}>
+                        <option selected={true} disabled="disabled">Filtrar</option>
+                        <option  value="Male">Male</option>
+                        <option  value="Female">Female</option>
+                        <option  value="Genderless">Genderless</option>
+                        <option  value="unknown">unknown</option>
                     </select>
                     </div>
           <div className={style.contain}>
           
           {
-            myFavorites && myFavorites.map((fav) => {
+             myFavorites.map(fav => {
                 return (
 
-                    <div className={style.fav}>
-                    <h1>{fav.name}</h1>
-                    <img src={fav.image} alt={fav.name}></img>
+                    <div className={style.fav} key={fav.id}>
+                        <Link to={`/detail/${fav.id}`} >
+                            <h1>{fav?.name}</h1>
+                        </Link>
+                        <img src={fav.image} alt={fav.name}></img>
                     
                     </div>
                 )
             })
           }
           </div>
-        </>
+        </div>
     )
 }
 
-export function mapStateToProps(state){
-    return {
-        myFavorites: state.myFavorites
-
-    }
-}
-
-export default connect(mapStateToProps, null)(Favorites);
-
+export default Favorites
