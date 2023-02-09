@@ -22,11 +22,23 @@ const express = require('express')
 const app = express();
 const axios = require("axios")
 const cors = require("cors")
+const allData = require('../controllers/getAllChars')
 let fav = []
 
 app.use(cors())
 
 app.use(express.json())
+
+app.get(`/rickandmorty/all`, async(req, res) => {
+    try{
+        const response = await allData()
+        res.status(200).json(response)
+    }
+    catch(err){
+        res.status(400).send('fallo loco')
+    }
+
+})
 
 app.get(`/rickandmorty/character/:id`, async (req, res) => {
     // res.setHeader('Access-Control-Allow-Origin', '*');
