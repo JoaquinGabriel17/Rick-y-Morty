@@ -1,5 +1,15 @@
-const sequelize = require('../DB_connection')
+// const sequelize = require('../DB_connection')
+const { Characters } = require('../DB_connection')
 
-const allData = async() => await sequelize.findAll()
+const allData = async() => {
+    try{
+    const allChar = await Characters.findAll()
+    return allChar
+    }
+    catch(error){
+        return { error: error.message}
+
+    }
+}
 
 module.exports = allData
