@@ -12,7 +12,7 @@ const getAllFavorites = require('../controllers/getAllFavorites')
 const deleteFavById = require('../controllers/getCharDetail')
 app.use(cors())
 app.use(express.json())
-//ahora bno
+//ahora si
 
 
 app.get('/rickandmorty/allCharacters', async(req, res) => {
